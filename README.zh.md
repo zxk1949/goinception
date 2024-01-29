@@ -51,9 +51,38 @@ cd goInception
 go build -o goInception tidb-server/main.go
 
 ./goInception -config=config/config.toml
+
+
+---注意---
+端口4000 密码为空
+server 端登录可在线修改参数或是在config.toml 中修改重启
+mysql -hlocalhost -uroot -P4000
+注： inception get variables;  查看参数
+    inception set enable_set_collation='true';  设置参数
+
+| osc_bin_dir                            | /usr/bin   此参数与pt工具目录一致
+
+
 ```
 
+
 ----
+
+***pt 工具安装***
+
+```bash
+官网https://www.percona.com/downloads/percona-toolkit
+
+wget https://www.percona.com/downloads/percona-toolkit/3.1.0/binary/redhat/7/x86_64/percona-toolkit-3.5.0-2.el7.x86_64.rpm
+yum install perl-DBI perl-DBD-MySQL perl-Digest-MD5 perl-IO-Socket-SSL perl-TermReadKey
+yum install -y percona-toolkit-3.5.0-2.el7.x86_64.rpm
+yum install percona-xtrabackup-80
+
+报错 Transaction check error: file /etc/my.cnf from install of Percona-Server-shared-56-5.6.51-rel91.0.1.el7.x86_64 conflicts with file from package mysql-community-server-8.0.32-1.el7.x86_64
+处理 yum install mysql-community-libs-compat -y  [说明：重新再安装一下]
+
+
+```
 
 #### 关联SQL审核平台 `已集成goInception`
 
