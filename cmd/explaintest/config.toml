@@ -1,0 +1,15 @@
+host = "0.0.0.0"
+port = 4001
+lease = "0"
+run-ddl = true
+
+[log]
+level = "error"
+
+[status]
+status-port = 10081
+
+[performance]
+stats-lease = "0"
+
+

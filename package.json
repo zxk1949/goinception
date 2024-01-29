@@ -1,0 +1,23 @@
+{
+  "name": "goInception",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hanchuanchuan/goInception.git",
+  "author": "hanchuanchuan",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "axios": "0.21.2",
+    "less": "^4.1.1",
+    "less-loader": "7.3.0",
+    "node-less": "^1.0.0",
+    "vuepress": "^1.8.2"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build-test": "node ./build/addComponents.js && vuepress build docs && node ./build/delComponents.js",
+    "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "gitalk": "^1.7.2"
+  }
+}
